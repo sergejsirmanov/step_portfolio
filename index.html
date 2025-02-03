@@ -3,82 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Слайдер фотографий</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .slider {
-            position: relative;
-            width: 80%;
-            max-width: 600px;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-        .slides {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .slide {
-            min-width: 100%;
-        }
-        .slide img {
-            width: 100%;
-            display: block;
-        }
-        .buttons {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-        .buttons button {
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-    </style>
+    <title>Слайдер</title>
+    <link rel="stylesheet" href="style.css"> <!-- Подключение CSS -->
 </head>
 <body>
-    <div class="slider">
-        <div class="slides">
-            <div class="slide"><img src="https://disk.yandex.ru/d/4tdSONGOc1kJ-A/1b33e4a1-d859-40a1-b984-becf1305aaae.JPG" alt="1"></div>
-            <div class="slide"><img src="https://disk.yandex.ru/d/4tdSONGOc1kJ-A/3d9262a3-d291-4115-b130-57de2c6672f8.JPG" alt="2"></div>
-            <div class="slide"><img src="https://disk.yandex.ru/d/4tdSONGOc1kJ-A/C7109BFE-E169-4DA6-9261-55CD849DC7DF.JPG" alt="3"></div>
-        </div>
-        <div class="buttons">
-            <button id="prev">&#10094;</button>
-            <button id="next">&#10095;</button>
-        </div>
-    </div>
-    <script>
-        const slides = document.querySelector('.slides');
-        const slide = document.querySelectorAll('.slide');
-        let index = 0;
-        
-        document.getElementById('next').addEventListener('click', () => {
-            index = (index + 1) % slide.length;
-            updateSlider();
-        });
-        
-        document.getElementById('prev').addEventListener('click', () => {
-            index = (index - 1 + slide.length) % slide.length;
-            updateSlider();
-        });
-        
-        function updateSlider() {
-            slides.style.transform = `translateX(-${index * 100}%)`;
-        }
-    </script>
+
+<input type="radio" id="trigger1" name="slider">
+<label for="trigger1"><span class="sr-only">Slide 1 of 5. A photo of a mountain pass with a winding path along the river and a view of distant mountains hiding in the mist.</span></label>
+<div class="slide bg1"></div>
+
+<input type="radio" id="trigger2" name="slider" checked autofocus>
+<label for="trigger2"><span class="sr-only">Slide 2 of 5. A photo of a bird eating sunflower seeds from an open hand.</span></label>
+<div class="slide bg2"></div>
+
+<input type="radio" id="trigger3" name="slider">
+<label for="trigger3"><span class="sr-only">Slide 3 of 5. A photo of a concrete bridge over the river with high voltage power lines on both banks.</span></label>
+<div class="slide bg3"></div>
+
+<input type="radio" id="trigger4" name="slider">
+<label for="trigger4"><span class="sr-only">Slide 4 of 5. A photo of a lake surrounded by the forest with mountains in the background.</span></label>
+<div class="slide bg4"></div>
+
+<input type="radio" id="trigger5" name="slider">
+<label for="trigger5"><span class="sr-only">Slide 5 of 5. A photo of a forest.</span></label>
+<div class="slide bg5"></div>
+
 </body>
 </html>
