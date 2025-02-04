@@ -93,6 +93,9 @@
                 document.getElementById('slider-img').src = images[currentIndex];
             }
         }
+
+        fetchImages();
+        
         // Обработка свайпов
         let startX;
 
@@ -111,7 +114,6 @@
                     prevSlide(); // Свайп влево
                 }
             }
-        fetchImages();
     </script>
 
 </body>
