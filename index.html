@@ -7,27 +7,35 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
             background-color: #f8f8f8;
-            margin: 20px;
-        }
-        h1 {
-            color: #333;
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: flex-end; /* Размещаем слайдер справа */
+            padding-right: 5%;
         }
         .slider-container {
-            width: 600px; /* Измените ширину */
-            margin: auto;
+            position: relative;
+            width: 450px; /* Соотношение 3:4 (450x600) */
+            height: 600px;
         }
         .slider {
             width: 100%;
-            height: 600px; /* Измените высоту */
+            height: 100%;
             overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         .slider img {
             width: 100%;
             height: 100%;
-            object-fit: scale-down; /* Уменьшает изображение, чтобы оно полностью помещалось */
-        }
+            object-fit: cover;
         }
         .slider-btn {
             position: absolute;
@@ -37,15 +45,16 @@
             color: white;
             border: none;
             padding: 10px;
+            font-size: 24px;
             cursor: pointer;
+            border-radius: 5px;
         }
-        .prev { left: 0; }
-        .next { right: 0; }
+        .prev { left: -50px; }
+        .next { right: -50px; }
     </style>
 </head>
 <body>
 
-    <h1>Слайдер изображений</h1>
     <div class="slider-container">
         <button class="slider-btn prev" onclick="prevSlide()">&#10094;</button>
         <div class="slider">
