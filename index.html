@@ -96,26 +96,6 @@
 
         fetchImages();
         
-        // Обработка свайпов
-        let startX;
-
-        document.getElementById('slider-container').addEventListener('touchstart', function(event) {
-            startX = event.touches[0].clientX; // Начальная позиция свайпа
-        });
-
-        document.getElementById('slider-container').addEventListener('touchend', function(event) {
-            const endX = event.changedTouches[0].clientX; // Конечная позиция свайпа
-            const diffX = startX - endX; // Разница в положении
-
-            if (Math.abs(diffX) > 30) { // Если разница больше 30px
-                if (diffX > 0) {
-                    nextSlide(); // Свайп вправо
-                } else {
-                    prevSlide(); // Свайп влево
-                }
-            }
-        });
-
     </script>
 
 </body>
