@@ -69,7 +69,7 @@
                 const data = await response.json();
                 
                 images = data
-                    .filter(file => file.type === 'file' && /\.(jpg|jpeg|png|gif)$/i.test(file.name))
+                    .filter(file => file.type === 'file' && /\.(jpg|jpeg|png|gif|webp)$/i.test(file.name))
                     .map(file => file.download_url);
 
                 if (images.length > 0) {
