@@ -3,50 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Галерея изображений</title>
+    <title>Слайдер изображений</title>
     <style>
-        #gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f8f8;
+            margin: 20px;
         }
-        img {
-            width: 150px;
-            height: auto;
+        h1 {
+            color: #333;
+        }
+        .slider-container {
+            position: relative;
+            width: 300px;
+            margin: auto;
+        }
+        .slider {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             border-radius: 5px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev { left: 0; }
+        .next { right: 0; }
     </style>
 </head>
 <body>
-    <h1>Галерея изображений</h1>
-    <div id="gallery"></div>
+
+    <h1>Слайдер изображений</h1>
+    <div class="slider-container">
+        <button class="slider-btn prev" onclick="prevSlide()">&#10094;</button>
+        <div class="slider">
+            <img id="slider-img" src="" alt="Изображение">
+        </div>
+        <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
+    </div>
 
     <script>
         const repoOwner = 'sergejsirmanov'; 
         const repoName = 'step_portfolio'; 
         const folderPath = 'images'; 
 
+        let images = [];
+        let currentIndex = 0;
+
         async function fetchImages() {
             const url = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderPath}`;
             try {
                 const response = await fetch(url);
                 const data = await response.json();
+                
+                images = data
+                    .filter(file => file.type === 'file' && /\.(jpg|jpeg|png|gif)$/i.test(file.name))
+                    .map(file => file.download_url);
 
-                const gallery = document.getElementById('gallery');
-                data.forEach(file => {
-                    if (file.type === 'file' && /\.(jpg|jpeg|png|gif)$/i.test(file.name)) {
-                        const img = document.createElement('img');
-                        img.src = file.download_url;
-                        gallery.appendChild(img);
-                    }
-                });
+                if (images.length > 0) {
+                    document.getElementById('slider-img').src = images[currentIndex];
+                }
             } catch (error) {
                 console.error('Ошибка загрузки изображений:', error);
             }
         }
 
+        function prevSlide() {
+            if (images.length > 0) {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                document.getElementById('slider-img').src = images[currentIndex];
+            }
+        }
+
+        function nextSlide() {
+            if (images.length > 0) {
+                currentIndex = (currentIndex + 1) % images.length;
+                document.getElementById('slider-img').src = images[currentIndex];
+            }
+        }
+
         fetchImages();
     </script>
+
 </body>
 </html>
