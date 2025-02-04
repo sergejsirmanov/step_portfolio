@@ -3,30 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Слайдер</title>
-    <link rel="stylesheet" href="style.css"> <!-- Подключение CSS -->
+    <title>Галерея изображений</title>
+    <style>
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        img {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 <body>
+    <h1>Галерея изображений</h1>
+    <div id="gallery"></div>
 
-<input type="radio" id="trigger1" name="slider">
-<label for="trigger1"><span class="sr-only">Slide 1 of 5. A photo of a mountain pass with a winding path along the river and a view of distant mountains hiding in the mist.</span></label>
-<div class="slide bg1"></div>
+    <script>
+        const repoOwner = 'sergejsirmanov'; 
+        const repoName = 'step_portfolio'; 
+        const folderPath = 'images'; 
 
-<input type="radio" id="trigger2" name="slider" checked autofocus>
-<label for="trigger2"><span class="sr-only">Slide 2 of 5. A photo of a bird eating sunflower seeds from an open hand.</span></label>
-<div class="slide bg2"></div>
+        async function fetchImages() {
+            const url = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderPath}`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
 
-<input type="radio" id="trigger3" name="slider">
-<label for="trigger3"><span class="sr-only">Slide 3 of 5. A photo of a concrete bridge over the river with high voltage power lines on both banks.</span></label>
-<div class="slide bg3"></div>
+                const gallery = document.getElementById('gallery');
+                data.forEach(file => {
+                    if (file.type === 'file' && /\.(jpg|jpeg|png|gif)$/i.test(file.name)) {
+                        const img = document.createElement('img');
+                        img.src = file.download_url;
+                        gallery.appendChild(img);
+                    }
+                });
+            } catch (error) {
+                console.error('Ошибка загрузки изображений:', error);
+            }
+        }
 
-<input type="radio" id="trigger4" name="slider">
-<label for="trigger4"><span class="sr-only">Slide 4 of 5. A photo of a lake surrounded by the forest with mountains in the background.</span></label>
-<div class="slide bg4"></div>
-
-<input type="radio" id="trigger5" name="slider">
-<label for="trigger5"><span class="sr-only">Slide 5 of 5. A photo of a forest.</span></label>
-<div class="slide bg5"></div>
-
+        fetchImages();
+    </script>
 </body>
 </html>
