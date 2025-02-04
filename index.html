@@ -23,7 +23,7 @@
         }
         .text-container {
             flex: 1;
-            text-align: center;
+            text-align: left;
             padding: 20px;
         }
         .text-container h1 {
@@ -76,15 +76,16 @@
         /* Адаптивность */
         @media (max-width: 1024px) {
             .container {
-                flex-direction: column;
+                flex-direction: column; /* Меняем направление на колонку */
                 align-items: center;
                 text-align: center;
             }
             .text-container {
                 text-align: center;
+                margin-bottom: 20px; /* Добавляем отступ снизу */
             }
             .slider-container {
-                width: 80%;
+                width: 80%; /* Слайдер будет занимать 80% ширины контейнера */
                 height: auto;
             }
             .slider img {
