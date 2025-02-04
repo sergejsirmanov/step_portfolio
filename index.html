@@ -5,32 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Галерея изображений</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f8f8f8;
-            margin: 20px;
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
-        h1 {
-            color: #333;
-        }
-        iframe {
-            width: 90%;
-            height: 600px;
-            border: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
+        img {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
-
     <h1>Галерея изображений</h1>
-    
-    <!-- Вставляем iframe с публичной папкой -->
-    <iframe src="https://disk.yandex.ru/d/4tdSONGOc1kJ-A/%D0%A4%D0%BE%D1%82%D0%BE" width="800" height="600"></iframe>
+    <div id="gallery"></div>
 
-    <p>Вы можете просматривать и скачивать изображения прямо из папки.</p>
+    <script>
+        const repoOwner = 'sergejsirmanov'; 
+        const repoName = 'step_portfolio'; 
+        const folderPath = 'images'; 
 
+        async function fetchImages() {
+            const url = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderPath}`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                const gallery = document.getElementById('gallery');
+                data.forEach(file => {
+                    if (file.type === 'file' && /\.(jpg|jpeg|png|gif)$/i.test(file.name)) {
+                        const img = document.createElement('img');
+                        img.src = file.download_url;
+                        gallery.appendChild(img);
+                    }
+                });
+            } catch (error) {
+                console.error('Ошибка загрузки изображений:', error);
+            }
+        }
+
+        fetchImages();
+    </script>
 </body>
 </html>
