@@ -9,16 +9,37 @@
             font-family: Arial, sans-serif;
             background-color: #f8f8f8;
             margin: 0;
+            padding: 0;
             display: flex;
-            height: 100vh;
             align-items: center;
-            justify-content: flex-end; /* Размещаем слайдер справа */
-            padding-right: 5%;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
+            gap: 50px;
+        }
+        .text-container {
+            flex: 1;
+            text-align: left;
+            padding: 20px;
+        }
+        .text-container h1 {
+            font-size: 32px;
+            color: #333;
+        }
+        .text-container p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
         }
         .slider-container {
             position: relative;
-            width: 450px; /* Соотношение 3:4 (450x600) */
+            width: 450px; /* Соотношение 3:4 */
             height: 600px;
+            flex-shrink: 0;
         }
         .slider {
             width: 100%;
@@ -51,16 +72,67 @@
         }
         .prev { left: -50px; }
         .next { right: -50px; }
+
+        /* Адаптивность */
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .text-container {
+                text-align: center;
+            }
+            .slider-container {
+                width: 80%;
+                height: auto;
+            }
+            .slider img {
+                height: auto;
+                object-fit: contain;
+            }
+            .prev, .next {
+                left: 10px;
+                right: 10px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="slider-container">
-        <button class="slider-btn prev" onclick="prevSlide()">&#10094;</button>
-        <div class="slider">
-            <img id="slider-img" src="" alt="Изображение">
+    <div class="container">
+        <div class="text-container">
+            <h1>Привет, меня зовут Степан – и я модель.</h1>
+            <p>
+                Моя история началась в 2019 году, когда я впервые снялся в рекламе для магазина одежды и обуви. 
+                Тогда моя ставка за час была всего 156 рублей, но именно с этой суммы начался мой путь к успеху!
+            </p>
+            <p>
+                С 2023 года я обучаю мужчин позированию, уходу за собой, как держаться уверенно перед камерой 
+                и как вживаться в роль на каждой съемке, выдавая настоящие эмоции.
+            </p>
+            <p>
+                В 2024 году моё лицо хотят видеть везде: съемки для магазинов одежды и обуви, личные бренды, 
+                маркетплейсы, кафе и рестораны, постановочный Reels, а также проекты и шоу на федеральных 
+                каналах, например «Россия 1».
+            </p>
+            <p>
+                Я не учился в модельной школе, а сразу начал преподавать там мужское фотопозирование. Опыт - 
+                главный учитель, ведь только во время работы ты понимаешь, зачем знать правила модельного мира.
+            </p>
+            <p>
+                На данный момент, я активно принимаю участие в съемках для различных брендов в Перми и Москве. 
+                Буду рад сотрудничеству!
+            </p>
         </div>
-        <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
+
+        <div class="slider-container">
+            <button class="slider-btn prev" onclick="prevSlide()">&#10094;</button>
+            <div class="slider">
+                <img id="slider-img" src="" alt="Изображение">
+            </div>
+            <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
+        </div>
     </div>
 
     <script>
