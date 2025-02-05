@@ -128,4 +128,8 @@ body {
         justify-content: space-between;
         height: auto; /* Убираем фиксированную высоту */
     }
+	/* Блок "О себе" */
+	#about {
+		width: 30%
+	}
 }
