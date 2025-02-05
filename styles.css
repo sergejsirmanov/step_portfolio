@@ -119,6 +119,7 @@ body {
 /* Медиа-запрос для ПК */
 @media (min-width: 1024px) {
     body {
+	background-color: red;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
