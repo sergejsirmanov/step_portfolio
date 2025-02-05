@@ -112,3 +112,51 @@ body {
     width: 50px; /* Устанавливаем размер иконок */
     height: 50px;
 }
+
+
+
+
+/* Медиа-запрос для ПК */
+@media (min-width: 1024px) {
+    body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+    }
+
+    /* Контейнер для всей страницы, разделение на блоки */
+    #about {
+	width: 45%;
+	text-align: left;
+    }
+
+    #about h1 {
+	font-size: 36px;
+    }
+
+    #about p {
+	font-size: 20px;
+    }
+
+    #slider {
+	margin-top: 0;
+	width: 50%;
+	display: flex;
+	justify-content: center;
+    }
+
+    #slider .slider-container {
+	width: 100%;
+	max-width: 500px;
+	height: calc(500px * 3 / 4);
+	max-height: 500px;
+    }
+
+    #contacts {
+	position: absolute;
+	bottom: 30px;
+	width: 100%;
+    }
+}
