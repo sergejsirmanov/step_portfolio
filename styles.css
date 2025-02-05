@@ -60,17 +60,26 @@ body {
 
 /* Кнопки навигации */
 #slider .slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.3);
-    color: white;
-    border: none;
-    padding: 15px;
-    font-size: 24px;
-    cursor: pointer;
-    border-radius: 5px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(0, 0, 0, 0.3);
+	color: white;
+	border: none;
+	padding: 15px;
+	font-size: 24px;
+	cursor: pointer;
+	border-radius: 5px;
 	z-index: 10;
+}
+
+#slider .slider-btn:focus {
+    outline: none; /* Убираем синюю обводку */
+}
+
+#slider .slider-btn:active {
+    background-color: #666; /* Серый цвет при нажатии */
+    transform: scale(0.95); /* Легкий эффект нажатия */
 }
 
 /* Левая кнопка (по левому краю экрана) */
