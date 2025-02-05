@@ -3,6 +3,14 @@ body {
     color: #f0f0f0; /* Светлый серый текст */
 }
 
+.main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+}
+
+
 /* Блок "О себе" */
 #about {
 	padding-left: 2.5vw;
@@ -23,7 +31,7 @@ body {
 
 /* Блок со слайдером */
 #slider {
-	margin-top: 50px; /* Отступ сверху*/
+	margin-top: 20px; /* Отступ сверху*/
     display: flex; /* Делаем flex-контейнер */
     justify-content: center; /* Центрируем по горизонтали */
     align-items: center; /* Центрируем по вертикали (если нужно) */
@@ -32,9 +40,9 @@ body {
 
 #slider .slider-container {
     position: relative;
-    width: 90vw; /* 80% ширины экрана */
+    width: 80vw; /* 80% ширины экрана */
     max-width: 450px; /* Максимальная ширина */
-    height: calc(90vw * 4 / 3); /* Высота рассчитывается по соотношению 3:4 */
+    height: calc(80vw * 4 / 3); /* Высота рассчитывается по соотношению 3:4 */
     max-height: 600px; /* Максимальная высота */
     flex-shrink: 0;
 }
@@ -92,8 +100,8 @@ body {
 
 
 #contacts {
-	margin-top: 50px; /* Отступ сверху*/
-	margin-bottom: 50px;
+	margin-top: 10px; /* Отступ сверху*/
+	margin-bottom: 10px;
 }
 /* Блок с социальными сетями */
 #contacts ul {
@@ -113,6 +121,18 @@ body {
     height: 50px;
 }
 
-@media (min-width: 1024px) {
-    
+/* для компов */
+@media (min-width: 768px) {
+    .main-container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #about {
+        max-width: 50%;
+    }
+
+    #slider {
+        max-width: 50%;
+    }
 }
