@@ -1,43 +1,35 @@
 body {
     background-color: #2e2e2e; /* Тёмно-графитовый фон */
     color: #f0f0f0; /* Светлый серый текст */
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    position: relative; /* Добавляем для правильного позиционирования дочерних элементов */
 }
 
 /* Блок "О себе" */
 #about {
-    padding-left: 2.5vw;
-    padding-right: 2.5vw;
+	padding-left: 2.5vw;
+	padding-right: 2.5vw;
 }
 
-/* Заголовок и параграф в #about */
 #about h1 {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    font-size: 32px;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-size: 32px;
 }
 
 #about p {
-    text-align: center;
-    font-family: Arial, sans-serif;
-    font-size: 18px;
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-size: 18px;
 }
 
 /* Блок со слайдером */
 #slider {
-    margin-top: 50px; /* Отступ сверху */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	margin-top: 50px; /* Отступ сверху*/
+    display: flex; /* Делаем flex-контейнер */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали (если нужно) */
     width: 100%; /* На всю ширину экрана */
 }
 
-/* Контейнер слайдера */
 #slider .slider-container {
     position: relative;
     width: 90vw; /* 80% ширины экрана */
@@ -47,7 +39,6 @@ body {
     flex-shrink: 0;
 }
 
-/* Слайдер */
 #slider .slider {
     width: 100%;
     height: 100%;
@@ -61,7 +52,6 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Картинки в слайдере */
 #slider .slider img {
     width: 100%;
     height: 100%;
@@ -81,28 +71,30 @@ body {
     cursor: pointer;
     border-radius: 5px;
     z-index: 10;
+
+    /* Убираем синий фон при нажатии */
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     user-select: none;
     outline: none;
 }
 
+
 /* Левая кнопка (по левому краю экрана) */
 #slider .prev {
-    left: calc((5vw / 2) * -1); /* Прижата к левому краю */
+    left: calc((5vw / 2)* -1); /* Прижата к левому краю */
 }
 
 /* Правая кнопка (по правому краю экрана) */
 #slider .next {
-    right: calc((5vw / 2) * -1); /* Прижата к правому краю */
+    right: calc((5vw / 2)* -1); /* Прижата к правому краю */
 }
 
-/* Блок с контактами */
+
 #contacts {
-    margin-top: 50px; /* Отступ сверху */
-    margin-bottom: 50px;
+	margin-top: 50px; /* Отступ сверху*/
+	margin-bottom: 50px;
 }
-
 /* Блок с социальными сетями */
 #contacts ul {
     list-style: none; /* Убираем маркеры списка */
@@ -119,31 +111,4 @@ body {
 #contacts ul li a img {
     width: 50px; /* Устанавливаем размер иконок */
     height: 50px;
-}
-
-/* Медиа-запрос для экранов с шириной больше 1024px (для десктопов) */
-@media (min-width: 1024px) {
-  /* Размещение #about в левой части */
-  #about {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  /* Размещение #slider в правой части */
-  #slider {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  /* Размещение #contacts снизу */
-  #contacts {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
 }
