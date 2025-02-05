@@ -71,16 +71,9 @@ body {
 	cursor: pointer;
 	border-radius: 5px;
 	z-index: 10;
+	-webkit-tap-highlight-color: transparent; /* Убираем синий фон на мобильных */
 }
 
-#slider .slider-btn:focus {
-    outline: none; /* Убираем синюю обводку */
-}
-
-#slider .slider-btn:active {
-    background-color: #666; /* Серый цвет при нажатии */
-    transform: scale(0.95); /* Легкий эффект нажатия */
-}
 
 /* Левая кнопка (по левому краю экрана) */
 #slider .prev {
