@@ -1,0 +1,104 @@
+/* Блок "О себе" */
+#about {
+	padding-left: 2.5vw;
+    padding-right: 2.5vw;
+}
+
+#about h1 {
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-size: 32px;
+	color: #333;
+}
+
+#about p {
+	text-align: center;
+	font-family: Arial, sans-serif;
+	font-size: 18px;
+	color: #555;
+}
+
+/* Блок со слайдером */
+#slider {
+	margin-top: 50px; /* Отступ сверху*/
+    display: flex; /* Делаем flex-контейнер */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали (если нужно) */
+    width: 100%; /* На всю ширину экрана */
+}
+
+#slider .slider-container {
+    position: relative;
+    width: 90vw; /* 80% ширины экрана */
+    max-width: 450px; /* Максимальная ширина */
+    height: calc(90vw * 4 / 3); /* Высота рассчитывается по соотношению 3:4 */
+    max-height: 600px; /* Максимальная высота */
+    flex-shrink: 0;
+}
+
+#slider .slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#slider .slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Кнопки навигации */
+#slider .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+	z-index: 10;
+}
+
+/* Левая кнопка (по левому краю экрана) */
+#slider .prev {
+    left: calc((5vw / 2)* -1); /* Прижата к левому краю */
+}
+
+/* Правая кнопка (по правому краю экрана) */
+#slider .next {
+    right: calc((5vw / 2)* -1); /* Прижата к правому краю */
+}
+
+
+#contacts {
+	margin-top: 50px; /* Отступ сверху*/
+	margin-bottom: 30px;
+}
+/* Блок с социальными сетями */
+#contacts ul {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем отступы */
+    display: flex; /* Делаем элементы списка в ряд */
+    justify-content: center; /* Выравниваем элементы по центру */
+    gap: 30px; /* Добавляем отступы между элементами */
+}
+
+#contacts ul li {
+    display: inline-block; /* Делаем элементы списка строчно-блочными */
+}
+
+#contacts ul li a img {
+    width: 50px; /* Устанавливаем размер иконок */
+    height: 50px;
+}
