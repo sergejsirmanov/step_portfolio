@@ -3,182 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Слайдер изображений</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        .container {
-            display: flex;
-            width: 90%;
-            max-width: 1200px;
-            gap: 50px;
-        }
-        .text-container {
-            flex: 1;
-            text-align: left;
-            padding: 20px;
-        }
-        .text-container h1 {
-            font-size: 32px;
-            color: #333;
-        }
-        .text-container p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #555;
-        }
-        .slider-container {
-            position: relative;
-            width: 450px; /* Соотношение 3:4 */
-            height: 600px;
-            flex-shrink: 0;
-        }
-        .slider {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        .slider img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            font-size: 24px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .prev { left: -50px; }
-        .next { right: -50px; }
-
-        /* Адаптивность */
-        @media (max-width: 2000px) {
-            .container {
-                flex-direction: column; /* Меняем направление на колонку */
-                align-items: center;
-                text-align: center;
-            }
-            .text-container {
-                text-align: center;
-                margin-bottom: 20px; /* Добавляем отступ снизу */
-            }
-            .slider-container {
-                width: 80%; /* Слайдер будет занимать 80% ширины контейнера */
-                height: auto;
-            }
-            .slider img {
-                height: auto;
-                object-fit: contain;
-            }
-            .prev, .next {
-                left: 10px;
-                right: 10px;
-            }
-        }
-    </style>
+    <title>Мой Лендинг</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Блок описания о себе -->
+    <section id="about">
+        <h1>Привет, меня зовут Степан&nbsp;&mdash; и&nbsp;я&nbsp;модель</h1>
+		<p>
+		Моя история началась в&nbsp;2019&nbsp;году, когда я&nbsp;впервые снялся в&nbsp;рекламе для магазина одежды и&nbsp;обуви. 
+		Тогда моя ставка за&nbsp;час была всего 156&nbsp;рублей, но&nbsp;именно с&nbsp;этой суммы начался мой путь к&nbsp;успеху!
+		</p>
+		<p>
+		С&nbsp;2023 года я&nbsp;обучаю мужчин позированию, уходу за&nbsp;собой, как держаться уверенно перед камерой 
+		и&nbsp;как вживаться в&nbsp;роль на&nbsp;каждой съемке, выдавая настоящие эмоции.
+		</p>
+		<p>
+		В&nbsp;2024 году моё лицо хотят видеть везде: съемки для магазинов одежды и&nbsp;обуви, личные бренды, 
+		маркетплейсы, кафе и&nbsp;рестораны, постановочный Reels, а&nbsp;также проекты и&nbsp;шоу на&nbsp;федеральных 
+		каналах, например &laquo;Россия&nbsp;1&raquo;.
+		</p>
+		<p>
+		Я&nbsp;не&nbsp;учился в&nbsp;модельной школе, а&nbsp;сразу начал преподавать там мужское фотопозирование. Опыт&nbsp;&mdash; 
+		главный учитель, ведь только во&nbsp;время работы ты&nbsp;понимаешь, зачем знать правила модельного мира.
+		</p>
+		<p>
+		На&nbsp;данный момент, я&nbsp;активно принимаю участие в&nbsp;съемках для различных брендов в&nbsp;Перми и&nbsp;Москве. 
+		Буду рад сотрудничеству!
+		</p>
+    </section>
 
-    <div class="container">
-        <div class="text-container">
-            <h1>Привет, меня зовут Степан – и я модель.</h1>
-            <p>
-                Моя история началась в 2019 году, когда я впервые снялся в рекламе для магазина одежды и обуви. 
-                Тогда моя ставка за час была всего 156 рублей, но именно с этой суммы начался мой путь к успеху!
-            </p>
-            <p>
-                С 2023 года я обучаю мужчин позированию, уходу за собой, как держаться уверенно перед камерой 
-                и как вживаться в роль на каждой съемке, выдавая настоящие эмоции.
-            </p>
-            <p>
-                В 2024 году моё лицо хотят видеть везде: съемки для магазинов одежды и обуви, личные бренды, 
-                маркетплейсы, кафе и рестораны, постановочный Reels, а также проекты и шоу на федеральных 
-                каналах, например «Россия 1».
-            </p>
-            <p>
-                Я не учился в модельной школе, а сразу начал преподавать там мужское фотопозирование. Опыт - 
-                главный учитель, ведь только во время работы ты понимаешь, зачем знать правила модельного мира.
-            </p>
-            <p>
-                На данный момент, я активно принимаю участие в съемках для различных брендов в Перми и Москве. 
-                Буду рад сотрудничеству!
-            </p>
-        </div>
-
+    <!-- Блок слайдера -->
+    <section id="slider">
         <div class="slider-container">
             <button class="slider-btn prev" onclick="prevSlide()">&#10094;</button>
             <div class="slider">
-                <img id="slider-img" src="" alt="Изображение">
+                <img id="slider-img" src="images/1.webp" alt="Изображение">
             </div>
             <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
         </div>
-    </div>
+    </section>
 
-    <script>
-        const repoOwner = 'sergejsirmanov'; 
-        const repoName = 'step_portfolio'; 
-        const folderPath = 'images'; 
-
-        let images = [];
-        let currentIndex = 0;
-
-        async function fetchImages() {
-            const url = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${folderPath}`;
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
-                
-                images = data
-                    .filter(file => file.type === 'file' && /\.(jpg|jpeg|png|gif|webp)$/i.test(file.name))
-                    .map(file => file.download_url);
-
-                if (images.length > 0) {
-                    document.getElementById('slider-img').src = images[currentIndex];
-                }
-            } catch (error) {
-                console.error('Ошибка загрузки изображений:', error);
-            }
-        }
-
-        function prevSlide() {
-            if (images.length > 0) {
-                currentIndex = (currentIndex - 1 + images.length) % images.length;
-                document.getElementById('slider-img').src = images[currentIndex];
-            }
-        }
-
-        function nextSlide() {
-            if (images.length > 0) {
-                currentIndex = (currentIndex + 1) % images.length;
-                document.getElementById('slider-img').src = images[currentIndex];
-            }
-        }
-
-        fetchImages();
-        
-    </script>
-
+    <!-- Блок с ссылками на соцсети -->
+    <section id="contacts">
+        <ul>
+			<li><a href="https://t.me/Stepan_artt"><img src="icons/tg-icon.png" alt="Telegram"></a></li>
+            <li><a href="https://instagram.com/Stepan_artt"><img src="icons/inst-icon.png" alt="Instagram"></a></li>
+			<li><a href="https://vk.com/stepanartemovich"><img src="icons/vk-icon.png" alt="Vkontakte"></a></li>
+        </ul>
+    </section>
+	<script src="script.js"></script>
 </body>
 </html>
