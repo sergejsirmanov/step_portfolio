@@ -1,6 +1,10 @@
 body {
-    background-color: #2e2e2e; /* Тёмно-графитовый фон */
-    color: #f0f0f0; /* Светлый серый текст */
+	background-color: #2e2e2e; /* Тёмно-графитовый фон */
+	color: #f0f0f0; /* Светлый серый текст */
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column; /* Вертикальное расположение элементов */
 }
 
 /* Блок "О себе" */
