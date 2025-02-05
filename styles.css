@@ -60,18 +60,23 @@ body {
 
 /* Кнопки навигации */
 #slider .slider-btn {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	background: rgba(0, 0, 0, 0.3);
-	color: white;
-	border: none;
-	padding: 15px;
-	font-size: 24px;
-	cursor: pointer;
-	border-radius: 5px;
-	z-index: 10;
-	-webkit-tap-highlight-color: transparent; /* Убираем синий фон на мобильных */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 10;
+
+    /* Убираем синий фон при нажатии */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+    outline: none;
 }
 
 
