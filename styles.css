@@ -113,52 +113,41 @@ body {
     height: 50px;
 }
 
-/* Медиа-запрос для мобильных устройств */
+/* Медиа-запрос для ПК */
 @media (min-width: 1024px) {
     body {
-        flex-direction: column;
-        height: auto;
-	    background-color: #2e2e2e; /* Тёмно-графитовый фон */
-	    color: #f0f0f0; /* Светлый текст */
-	    margin: 0;
-	    height: 100vh;
-	    display: flex;
-	    flex-wrap: wrap;
-	}
-	
-	/* Блок "О себе" (левая половина экрана) */
-	#about {
-	    width: 50%;
-	    height: 100%;
-	    padding: 20px;
-	    box-sizing: border-box;
-	}
-	
-	/* Блок со слайдером (правая половина экрана) */
-	#slider {
-	    width: 50%;
-	    height: 100%;
-	    display: flex;
-	    justify-content: center;
-	    align-items: center;
-	    box-sizing: border-box;
-	}
-	
-	/* Блок с контактами (прижат к низу, 50% ширины) */
-	#contacts {
-	    width: 50%;
-	    height: auto;
-	    position: absolute;
-	    bottom: 0;
-	    left: 0;
-	    padding: 20px;
-	    box-sizing: border-box;
-	    background: rgba(0, 0, 0, 0.5);
-	}
+        display: flex;
+        flex-wrap: wrap;
+        height: 100vh;
+    }
 
-    #about, #slider, #contacts {
-        width: 100%;
-        position: static;
-        height: auto;
+    /* Блок "О себе" (левая половина экрана) */
+    #about {
+        width: 50%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Блок со слайдером (правая половина экрана) */
+    #slider {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    /* Блок контактов (прижат к низу, занимает 50% ширины) */
+    #contacts {
+        width: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 20px;
+        box-sizing: border-box;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 10; /* Поверх других элементов */
     }
 }
