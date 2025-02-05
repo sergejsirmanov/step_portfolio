@@ -40,9 +40,9 @@ body {
 
 #slider .slider-container {
     position: relative;
-    width: 80vw; /* 80% ширины экрана */
+    width: 90vw; /* 80% ширины экрана */
     max-width: 450px; /* Максимальная ширина */
-    height: calc(80vw * 4 / 3); /* Высота рассчитывается по соотношению 3:4 */
+    height: calc(90vw * 4 / 3); /* Высота рассчитывается по соотношению 3:4 */
     max-height: 600px; /* Максимальная высота */
     flex-shrink: 0;
 }
