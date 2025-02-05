@@ -6,7 +6,7 @@ body {
 /* Блок "О себе" */
 #about {
 	padding-left: 2.5vw;
-    padding-right: 2.5vw;
+	padding-right: 2.5vw;
 }
 
 #about h1 {
@@ -86,7 +86,7 @@ body {
 
 #contacts {
 	margin-top: 50px; /* Отступ сверху*/
-	margin-bottom: 30px;
+	margin-bottom: 50px;
 }
 /* Блок с социальными сетями */
 #contacts ul {
