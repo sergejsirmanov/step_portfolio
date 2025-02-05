@@ -112,3 +112,139 @@ body {
     width: 50px; /* Устанавливаем размер иконок */
     height: 50px;
 }
+
+
+/* Медиа-запрос для экранов с шириной больше 1024px (для десктопов) */
+@media (min-width: 1024px) {
+  body {
+    flex-direction: row; /* Изменяем направление на горизонтальное для десктопов */
+  }
+
+  /* Блок "О себе" */
+  #about {
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    width: 30%; /* Ограничиваем ширину блока "О себе" */
+  }
+
+  /* Слайдер */
+  #slider {
+    margin-top: 0;
+    width: 40%; /* Ограничиваем ширину слайдера */
+  }
+
+  /* Контакты */
+  #contacts {
+    margin-top: 0;
+    width: 30%; /* Ограничиваем ширину блока с контактами */
+  }
+}
+
+/* Блок "О себе" */
+#about {
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+}
+
+#about h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 32px;
+}
+
+#about p {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+}
+
+/* Блок со слайдером */
+#slider {
+    margin-top: 50px; /* Отступ сверху */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#slider .slider-container {
+    position: relative;
+    width: 90vw; /* 80% ширины экрана */
+    max-width: 450px; /* Максимальная ширина */
+    height: calc(90vw * 4 / 3); /* Высота рассчитывается по соотношению 3:4 */
+    max-height: 600px; /* Максимальная высота */
+    flex-shrink: 0;
+}
+
+#slider .slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#slider .slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Кнопки навигации */
+#slider .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 10;
+
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    user-select: none;
+    outline: none;
+}
+
+/* Левая кнопка */
+#slider .prev {
+    left: calc((5vw / 2) * -1);
+}
+
+/* Правая кнопка */
+#slider .next {
+    right: calc((5vw / 2) * -1);
+}
+
+/* Контакты */
+#contacts {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* Социальные сети */
+#contacts ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+#contacts ul li {
+    display: inline-block;
+}
+
+#contacts ul li a img {
+    width: 50px;
+    height: 50px;
+}
