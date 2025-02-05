@@ -1,33 +1,38 @@
+/* Основные стили для мобильных устройств */
 body {
     background-color: #2e2e2e; /* Тёмно-графитовый фон */
     color: #f0f0f0; /* Светлый серый текст */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение элементов */
+    height: 100vh;
 }
 
 /* Блок "О себе" */
 #about {
-	padding-left: 2.5vw;
-	padding-right: 2.5vw;
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+    text-align: center;
 }
 
 #about h1 {
-	text-align: center;
-	font-family: Arial, sans-serif;
-	font-size: 32px;
+    font-family: Arial, sans-serif;
+    font-size: 32px;
 }
 
 #about p {
-	text-align: center;
-	font-family: Arial, sans-serif;
-	font-size: 18px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
 }
 
 /* Блок со слайдером */
 #slider {
-	margin-top: 50px; /* Отступ сверху*/
-    display: flex; /* Делаем flex-контейнер */
-    justify-content: center; /* Центрируем по горизонтали */
-    align-items: center; /* Центрируем по вертикали (если нужно) */
-    width: 100%; /* На всю ширину экрана */
+    margin-top: 50px; /* Отступ сверху */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 #slider .slider-container {
@@ -72,46 +77,79 @@ body {
     border-radius: 5px;
     z-index: 10;
 
-    /* Убираем синий фон при нажатии */
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     user-select: none;
     outline: none;
 }
 
-
-/* Левая кнопка (по левому краю экрана) */
+/* Левая кнопка */
 #slider .prev {
-    left: calc((5vw / 2)* -1); /* Прижата к левому краю */
+    left: calc((5vw / 2) * -1);
 }
 
-/* Правая кнопка (по правому краю экрана) */
+/* Правая кнопка */
 #slider .next {
-    right: calc((5vw / 2)* -1); /* Прижата к правому краю */
+    right: calc((5vw / 2) * -1);
 }
 
-
+/* Контакты */
 #contacts {
-	margin-top: 50px; /* Отступ сверху*/
-	margin-bottom: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
-/* Блок с социальными сетями */
+
+/* Социальные сети */
 #contacts ul {
-    list-style: none; /* Убираем маркеры списка */
-    padding: 0; /* Убираем отступы */
-    display: flex; /* Делаем элементы списка в ряд */
-    justify-content: center; /* Выравниваем элементы по центру */
-    gap: 30px; /* Добавляем отступы между элементами */
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 }
 
 #contacts ul li {
-    display: inline-block; /* Делаем элементы списка строчно-блочными */
+    display: inline-block;
 }
 
 #contacts ul li a img {
-    width: 50px; /* Устанавливаем размер иконок */
+    width: 50px;
     height: 50px;
 }
 
+/* Медиазапрос для десктопных устройств (ширина больше 1024px) */
+@media (min-width: 1024px) {
+    body {
+        flex-direction: row; /* Горизонтальное расположение элементов */
+        justify-content: space-between;
+        height: auto; /* Убираем фиксированную высоту */
+    }
 
+    /* Блок "О себе" */
+    #about {
+        width: 30%; /* Ограничиваем ширину блока "О себе" */
+        padding-left: 3vw;
+        padding-right: 3vw;
+    }
 
+    /* Слайдер */
+    #slider {
+        margin-top: 0;
+        width: 40%; /* Ограничиваем ширину слайдера */
+    }
+
+    /* Контакты */
+    #contacts {
+        width: 30%; /* Ограничиваем ширину блока с контактами */
+        margin-top: 0;
+    }
+
+    /* Изменение размера шрифтов для десктопа */
+    #about h1 {
+        font-size: 36px;
+    }
+
+    #about p {
+        font-size: 20px;
+    }
+}
