@@ -1,10 +1,6 @@
 body {
-	background-color: #2e2e2e; /* Тёмно-графитовый фон */
-	color: #f0f0f0; /* Светлый серый текст */
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: column; /* Вертикальное расположение элементов */
+    background-color: #2e2e2e; /* Тёмно-графитовый фон */
+    color: #f0f0f0; /* Светлый серый текст */
 }
 
 /* Блок "О себе" */
@@ -115,21 +111,4 @@ body {
 #contacts ul li a img {
     width: 50px; /* Устанавливаем размер иконок */
     height: 50px;
-}
-
-
-
-
-
-/* Медиазапрос для десктопных устройств (ширина больше 1024px) */
-@media (min-width: 1024px) {
-    body {
-        flex-direction: row; /* Горизонтальное расположение элементов */
-        justify-content: space-between;
-        height: auto; /* Убираем фиксированную высоту */
-    }
-	/* Блок "О себе" */
-	#about {
-		width: 30%;
-	}
 }
